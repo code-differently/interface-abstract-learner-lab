@@ -1,14 +1,17 @@
 package com.codedifferntly.interfaces;
 
+//Create a TestPerson class.
+//Create a testConstructor method which ensures that a Person object's id field
+//      is being set upon construction.
+//Create a testSetName method which ensures that a Person object's name variable
+//      is being set by invoking the .setName method.
+
+import org.junit.Test;
+
 import org.junit.Assert;
 import org.junit.Test;
 
 public class TestPerson {
-//    Create a TestPerson class.
-//    Create a testConstructor method which ensures that a Person object's id field is
-//          being set upon construction.
-//    Create a testSetName method which ensures that a Person object's name variable is
-//          being set by invoking the .setName method.
 
     @Test
     public void testConstructor() {
