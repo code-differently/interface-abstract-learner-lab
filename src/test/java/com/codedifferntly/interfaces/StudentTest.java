@@ -35,9 +35,6 @@ public class StudentTest {
         Assert.assertEquals(true, actual);
     }
 
-
-    // Create a testLearn method that ensures a Student's totalStudyTime instance variable is incremented by the specified numberOfHours by invoking the .learn method.
-
     @Test
     public void testLearn() {
         // Given
