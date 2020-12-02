@@ -23,8 +23,6 @@ public class Student extends Person implements Learner{
             return totalStudyTime;
         }
 
-    public void learn() {
-    }
 }
 
 

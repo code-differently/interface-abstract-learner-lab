@@ -16,19 +16,19 @@ public class TestStudent {
 
 //    @Before
 //    public void setUp()   {  //throws Exception?
-//        Student testStudent = new Student(1);
+//        Student student = new Student(1);
 //}
 
     @Test
     public void testImplementation() {
         //Given
-        Student testStudent = new Student(1);
+        Student student = new Student(1);
 
         //When
-        boolean isStudentInstanceOf = testStudent instanceof Learner;
+        boolean Student = student instanceof Learner;
 
         //Then
-        Assert.assertTrue(isStudentInstanceOf);
+        Assert.assertTrue(Student);
 
     }
 
@@ -38,10 +38,10 @@ public class TestStudent {
         Student testStudent = new Student(1);
 
         //When
-        boolean isPersonInstanceOf = testStudent instanceof Person;
+        boolean student = testStudent instanceof Person;
 
         //Then
-        Assert.assertTrue(isPersonInstanceOf);
+        Assert.assertTrue(student);
 
     }
 
@@ -50,13 +50,17 @@ public class TestStudent {
         //Given
         Student testStudent = new Student(1);
         testStudent.learn(5.0);
-        //When
 
+        //When
+        double expected = 5.0;
+        double actual = testStudent.getTotalStudyTime();
 
         //Then
-
+        Assert.assertEquals(expected, actual, 0.00001);
 
 
     }
+
+
 }
 
