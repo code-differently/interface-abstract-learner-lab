@@ -32,7 +32,7 @@ public class TestStudent {
 
         // Given
         Student student = new Student(123);
-        double expected = 1.0;
+        double expected = 1.0 ;
 
         // When
         student.learn(1.0);
