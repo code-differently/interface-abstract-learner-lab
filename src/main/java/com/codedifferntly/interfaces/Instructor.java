@@ -24,6 +24,9 @@ public class Instructor extends Person implements Teacher {
 
     @Override
     public void lecture(Learner[] learners, double numberOfHours) {
-
+        double numberOfHoursPerLearner = numberOfHours / learners.length;
+        for (Learner l : learners) {
+            l.Learn(numberOfHoursPerLearner);
+        }
     }
 }

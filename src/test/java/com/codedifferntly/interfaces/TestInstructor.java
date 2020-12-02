@@ -55,28 +55,25 @@ public class TestInstructor {
     }
 
 //    Create a testLecture method that ensures when an Instructor invokes the lecture method, a respective array of students' totalStudyTime instance variables is incremented by numberOfHours/students.length.
-//    @Test
-//    public void testLecture() {
-//        // Given
-//        Instructor instructor = new Instructor(960, "Tariq");
-//        Student michael = new Student(1111, "Michael");
-//        Student sam = new Student(1112, "Sam");
-//        Student victor = new Student(1113, "Victor");
-//        Student danielle = new Student(1114, "Danielle");
-//
-//        Student[] students = {michael, sam, victor, danielle};
-//
-//        // When
-//        double expected = 0;
-//        //double actual;
-//        boolean actual = false;
-//
-//        double result = 0;
-//        for (s : students) {
-//            // Assert.get
-//        }
-//
-//        // Then
-//    }
+    @Test
+    public void testLecture() {
+        // Given
+        Instructor instructor = new Instructor(960, "Tariq");
+        Student michael = new Student(1111, "Michael");
+        Student sam = new Student(1112, "Sam");
+        Student victor = new Student(1113, "Victor");
+        Student danielle = new Student(1114, "Danielle");
+        Student[] students = {michael, sam, victor, danielle};
+
+        // When
+        double expected = 10;
+        instructor.lecture(students, 20);
+
+        // Then
+        Assert.assertEquals("michael", expected, michael.getTotalStudyTime(), 0.01);
+        Assert.assertEquals("sam", expected, sam.getTotalStudyTime(), 0.01);
+        Assert.assertEquals("victor", expected, victor.getTotalStudyTime(), 0.01);
+        Assert.assertEquals("danielle", expected, danielle.getTotalStudyTime(), 0.01);
+    }
 
 }
