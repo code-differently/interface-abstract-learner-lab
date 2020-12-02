@@ -44,7 +44,7 @@ public class TestInstructor {
     }
 
     @Test
-    public void testLecture(){
+    public void testLectureEffectOnStudents(){
     //Given
     Instructor instructor = new Instructor(234L);
     Student holly = new Student(225L);
@@ -54,11 +54,32 @@ public class TestInstructor {
 
 
     //When
-    instructor.lecture(learners, 12.0);
-    double expected = 4.0;
+    instructor.lecture(learners, 1.0);
+    double expected = 1.0;
     double actual = holly.getTotalStudyTime();
 
     //Then
+        Assert.assertEquals(expected,actual,0.0);
+    }
+
+
+    @Test
+    public void testLectureEffectOnInstructor(){
+        //Given
+        Instructor instructor = new Instructor(234L);
+        Student holly = new Student(225L);
+        Student matt = new Student(226L);
+        Student ray = new Student(227L);
+        Learner[] learners = new Learner[]{holly, matt, ray};
+
+
+
+        //When
+        instructor.lecture(learners, 3.0);
+        double expected = 1.0;
+        double actual = instructor.getTotalNumberOfHoursPerLearner();
+
+        //Then
         Assert.assertEquals(expected,actual,0.0);
     }
 
