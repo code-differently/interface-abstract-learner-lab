@@ -1,6 +1,7 @@
 package com.codedifferntly.interfaces;
 
 public class Person {
+
     private final long id;
     private String name;
 
