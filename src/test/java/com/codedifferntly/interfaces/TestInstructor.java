@@ -1,10 +1,8 @@
 package com.codedifferntly.interfaces;
 
-import com.codedifferntly.interfaces.interfaces.Learner;
 import com.codedifferntly.interfaces.interfaces.Teacher;
 import org.junit.Assert;
 import org.junit.Test;
-import sun.jvm.hotspot.gc.shared.GCWhen;
 
 public class TestInstructor {
 
@@ -67,16 +65,14 @@ public class TestInstructor {
 
         //When
 
-        double expected = 0.0;
-        boolean actual = false;
+        double expected = 10;
+        instructor.lecture(students, 20);
 
-          double result = 0.0;
-          for(s : students){
-
-          }
-
-        //Then
-
+        // Then
+        Assert.assertEquals("michael", expected, Mike.getTotalStudyTime(), 0.01);
+        Assert.assertEquals("sam", expected, Sam.getTotalStudyTime(), 0.01);
+        Assert.assertEquals("victor", expected, Victor.getTotalStudyTime(), 0.01);
+        Assert.assertEquals("danielle", expected, Danielle.getTotalStudyTime(), 0.01);
 
     }
 }
