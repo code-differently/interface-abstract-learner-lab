@@ -16,11 +16,11 @@ public class TestPerson {
     @Test
     public void testConstructor() {
         //Given
-        Person testperson = new Person(1L);
+        Person person = new Person(3);
 
        //When
-        long expected = 1L;
-        long actual = testperson.getId();
+        long expected = 3;
+        long actual = person.getId();
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -29,12 +29,12 @@ public class TestPerson {
     @Test
     public void testSetName() {
         //Given
-        Person testperson = new Person(1L);
-        testperson.setName("Holly");
+        Person person = new Person(3);
+        person.setName("Holly");
 
         //When
         String expected = "Holly";
-        String actual = testperson.getName();
+        String actual = person.getName();
 
         //Then
         Assert.assertEquals(expected, actual);

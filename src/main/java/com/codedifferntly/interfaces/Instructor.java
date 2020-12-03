@@ -17,17 +17,38 @@ public class Instructor extends Person implements Teacher {
     }
     @Override
     public void teach(Learner learner, double numberOfHours) {
-
+        learner.learn(numberOfHours);
     }
 
     @Override
-    public void lecture(Learner[] learners, double numberOfHours) {
-       double numberOfHoursPerLearner = numberOfHours / learners.length;
-       for(Learner learner : learners) {
-           learner.learn(numberOfHoursPerLearner);
+    public void lecture(Learner[]learners, double numberOfHours) {
+        double numberOfHoursPerLearner = numberOfHours / learners.length;
+        for (Learner learner : learners) {
+            learner.learn(numberOfHoursPerLearner);
+        }
+
+//        @Override
+//        public void lecture(Learner[]learners, double numberOfHours) {
+//            double numberOfHoursPerLearner = numberOfHours / learners.length;
+//            for (int i = 0; i < learners.length; i++) {
+//                learners[i].learn(numberOfHoursPerLearner);
+//            }
+       //The commented out code below was put in Slack by Matt. I learned it is an enhanced for loop
+            //which is a simpler way to do an array when we don't need to work directly with
+            // iterators or indexes. The colon is read as "in". I did the standard array above
+            //to see if it would work, and to help me with comprehension. Then I learned that IntelliJ
+            //will change the whole thing over to an enhanced for loop for you!!! Woo Hoo!! So then I
+            //copied the array code, commented it out, then pasted it above so I could let IntelliJ
+            // do it's thing, which was exactly what Matt had already done! That was fun!
+
+
+//    public void lecture(Learner[] learners, double numberOfHours) {
+//       double numberOfHoursPerLearner = numberOfHours / learners.length;
+//       for(Learner learner : learners) {
+//           learner.learn(numberOfHoursPerLearner);
        }
    }
-    }
+
 
 
 
