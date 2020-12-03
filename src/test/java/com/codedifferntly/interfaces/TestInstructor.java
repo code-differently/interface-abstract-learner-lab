@@ -38,7 +38,7 @@ public class TestInstructor {
         Assert.assertTrue(actual);
     }
 
-//  Create a testTeach method that ensures when an Instructor invokes the teach method, a respective student's totalStudyTime instance variable is incremented by the specified numberOfHours.
+    //  Create a testTeach method that ensures when an Instructor invokes the teach method, a respective student's totalStudyTime instance variable is incremented by the specified numberOfHours.
     @Test
     public void testTeach() {
         // Given
@@ -54,26 +54,25 @@ public class TestInstructor {
         Assert.assertEquals(expected, actual, 0.01);
     }
 
-//    Create a testLecture method that ensures when an Instructor invokes the lecture method, a respective array of students' totalStudyTime instance variables is incremented by numberOfHours/students.length.
+    //    Create a testLecture method that ensures when an Instructor invokes the lecture method, a respective array of students' totalStudyTime instance variables is incremented by numberOfHours/students.length.
     @Test
     public void testLecture() {
         // Given
         Instructor instructor = new Instructor(960, "Tariq");
+
         Student michael = new Student(1111, "Michael");
         Student sam = new Student(1112, "Sam");
         Student victor = new Student(1113, "Victor");
         Student danielle = new Student(1114, "Danielle");
         Student[] students = {michael, sam, victor, danielle};
 
-        // When
-        double expected = 10;
         instructor.lecture(students, 20);
 
-        // Then
-        Assert.assertEquals("michael", expected, michael.getTotalStudyTime(), 0.01);
-        Assert.assertEquals("sam", expected, sam.getTotalStudyTime(), 0.01);
-        Assert.assertEquals("victor", expected, victor.getTotalStudyTime(), 0.01);
-        Assert.assertEquals("danielle", expected, danielle.getTotalStudyTime(), 0.01);
-    }
+        // When
+        double expected = 10;
+        double actual = michael.getTotalStudyTime();
 
+        // Then
+        Assert.assertEquals(expected, actual, 0.01);
+    }
 }
