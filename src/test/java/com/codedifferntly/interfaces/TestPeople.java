@@ -41,4 +41,20 @@ public class TestPeople {
         // Then
         Assert.assertEquals(expected, actual);
     }
+
+    // Create a testFindById method which ensures that a respective Person object with a respective id field is returned upon invokation of the findById method on a respective People object.
+    @Test
+    public void testFindById() {
+        // Given
+        People people = new People();
+        Person person = new Person(789123l, "Peter");
+        people.add(person);
+
+        // When
+        Person expected = person;
+        Person actual = people.findById(person.getId());
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
 }

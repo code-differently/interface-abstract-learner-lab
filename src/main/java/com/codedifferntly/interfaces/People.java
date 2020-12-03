@@ -26,6 +26,10 @@ public class People {
     }
 
     public Person findById(long id) {
+        for (Person p : personList) {
+            if (p.getId() == id)
+                return p;
+        }
         return null;
     }
 
@@ -34,12 +38,9 @@ public class People {
     }
 
     public void remove(long id) {
-        for (Person p : personList) {
-            if (p.getId() == id) {
-                remove(p);
-                break;
-            }
-        }
+        Person person = findById(id);
+        if (person != null)
+            remove(person);
     }
 
     public int getCount() {
