@@ -1,11 +1,11 @@
 package com.codedifferntly.interfaces;
 
-public class Person {
+public class Person implements Learner {
 
     private final long id;
     private String name;
 
-    public Person(long id) {
+    public Person(String name, long id) {
         this.id = id;
     }
 
@@ -19,5 +19,10 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public void learn(double numberOfHours) {
+
     }
 }
