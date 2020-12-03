@@ -4,29 +4,48 @@ import java.util.*;
 
 
 
-public class People extends Person {
+public class People {
 
 
+       ArrayList<Person> personList;
 
-    private final Object Person;
+        public People(){
+            personList = new ArrayList<>();
+        }
 
-    public People(long id, String name, Object person) {
-        super(id, name);
-        Person = person;
+        public void add(Person person){
+            personList.add(person);
 
-        ArrayList<Person> personList = new ArrayList<Person>();
+        }
 
-        personList.add(getPerson(person));
-        personList.remove(getId());
+      public Person findById(long id) {
+          for (Person p : personList) {
+              if (p.getId() == id)
+                  return p;
+          }
+          return  null;
+      }
+        public void remove(Person person){
+            personList.remove(person);
+        }
 
-        Object findById = personList.remove(getId());
 
-    }
-    private com.codedifferntly.interfaces.Person getPerson(Object person) {
-        return null;
-    }
+        public void remove(long  id){
+            Person person = findById(id);
+               if(person != null){
+                    remove(person);
+
+                }
+            }
+
+      public int getCount(){
+            return personList.size();
+        }
+
 
 }
+
+
 
 
 
