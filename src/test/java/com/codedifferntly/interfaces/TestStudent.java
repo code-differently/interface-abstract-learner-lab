@@ -35,25 +35,25 @@ public class TestStudent {
     @Test
     public void testInheritance() {
         //Given
-        Student testStudent = new Student(1);
+        Student student = new Student(1);
 
         //When
-        boolean student = testStudent instanceof Person;
+        boolean Student = student instanceof Person;
 
         //Then
-        Assert.assertTrue(student);
+        Assert.assertTrue(Student);
 
     }
 
     @Test
     public void testLearn() {
         //Given
-        Student testStudent = new Student(1);
-        testStudent.learn(5.0);
+        Student Student = new Student(1);
 
         //When
+        Student.learn(5.0);
         double expected = 5.0;
-        double actual = testStudent.getTotalStudyTime();
+        double actual = Student.getTotalStudyTime();
 
         //Then
         Assert.assertEquals(expected, actual, 0.00001);
