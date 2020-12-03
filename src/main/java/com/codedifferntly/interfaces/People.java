@@ -22,7 +22,7 @@ public class People {
     }
 
     public void add(Person person) {
-
+        personList.add(person);
     }
 
     public Person findById(long id) {
@@ -30,15 +30,20 @@ public class People {
     }
 
     public void remove(Person person) {
-
+        personList.remove(person);
     }
 
     public void remove(long id) {
-
+        for (Person p : personList) {
+            if (p.getId() == id) {
+                remove(p);
+                break;
+            }
+        }
     }
 
     public int getCount() {
-        return 0;
+        return personList.size();
     }
 
     public Person[] getArray() {
