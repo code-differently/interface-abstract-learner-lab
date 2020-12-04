@@ -51,15 +51,15 @@ public class People {
 
     }
 
-    public Student[] getArrayOfStudents() {
+    public Person[] getArray() {
 
-        Student[] students = new Student[personList.size()];
+        Person[] person = new Person[personList.size()];
 
-        for (int i = 0; i < students.length; i++) {
-            students[i] = (Student) personList.get(i);
+        for (int i = 0; i < person.length; i++) {
+            person[i] = (Student) personList.get(i);
 
         }
-        return students;
+        return person;
 
     }
 

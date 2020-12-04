@@ -34,8 +34,8 @@ public class PeopleTest {
     @Test
     public void testRemove() {
         //Given
-        Person person = new Person(311);
         People people = new People();
+        Person person = new Person(311);
         people.add(person);
 
         //When
@@ -50,8 +50,8 @@ public class PeopleTest {
     @Test
     public void testFindById() {
         //Given
-        Person person = new Person(311);
         People people = new People();
+        Person person = new Person(311);
         people.add(person);
 
         //When
