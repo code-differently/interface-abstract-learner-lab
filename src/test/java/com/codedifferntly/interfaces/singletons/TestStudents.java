@@ -9,19 +9,12 @@ public class TestStudents {
     @Test
     public void testStudents(){
 
-        //Given
+
+        int expected = 8;
         Students students = Students.getInstance();
-        Students students1 = Students.getInstance();
-        Students students2 = Students.getInstance();
-        Students students3 = Students.getInstance();
+        int actual = students.getCount();
 
-        //When
-        boolean expected = students.equals(students1); students.equals(students2);
-                            students.equals(students3);
-        boolean actual = true;
-
-        //Then
-        Assert.assertTrue(true);
+        Assert.assertEquals(expected, actual);
 
 
     }
