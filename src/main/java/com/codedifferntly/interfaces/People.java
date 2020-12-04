@@ -48,7 +48,12 @@ public class People {
     }
 
     public Person[] getArray() {
-        return null;
+        Person[] person = new Person[personList.size()];
+        for (int i = 0; i < person.length; i++) {
+            person[i] = personList.get(i);
+        }
+
+        return person;
     }
 
     public void removeAll() {

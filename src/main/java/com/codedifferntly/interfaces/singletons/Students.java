@@ -9,22 +9,22 @@ package com.codedifferntly.interfaces.singletons;
 //        The class should define a getInstance method which returns the INSTANCE field.
 
 import com.codedifferntly.interfaces.People;
-import com.codedifferntly.interfaces.Person;
+import com.codedifferntly.interfaces.Student;
 
 public final class Students extends People {
 
     private static final Students INSTANCE = new Students();
 
     private Students() {
-        Person sam = new Person(443, "Sam");
-        Person gabriella = new Person(995, "Gabriella");
-        Person aakriti = new Person(968, "Aakriti");
-        Person camelCashMoney = new Person(8, "Victor$$");
-        Person michael = new Person(007, "Michael$$");
-        Person Sam = new Person(443, "Sam");
-        Person danielleD = new Person(15, "Danielle D");
-        Person abi = new Person(147, "Abi");
-        Person lachelle = new Person(050, "Lachelle");
+        Student sam = new Student(443, "Sam");
+        Student gabriella = new Student(995, "Gabriella");
+        Student aakriti = new Student(968, "Aakriti");
+        Student camelCashMoney = new Student(8, "Victor$$");
+        Student michael = new Student(007, "Michael$$");
+        Student Sam = new Student(443, "Sam");
+        Student danielleD = new Student(15, "Danielle D");
+        Student abi = new Student(147, "Abi");
+        Student lachelle = new Student(050, "Lachelle");
 
         add(sam);
         add(gabriella);
