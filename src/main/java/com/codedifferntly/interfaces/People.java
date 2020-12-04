@@ -29,19 +29,48 @@ public class People {
     }
 
     public Person findById(long id) {
-        return person;
+        for (Person person : personList) {
+            if (person.getId() == id)
+                return person;
+
+        }
+        return null;
     }
 
     public void remove(Person person) {
-
+        personList.remove(person);
     }
 
     public void remove(long id) {
+        personList.remove(id);
 
     }
 
     public int getCount() {
-        return 0;
+        return personList.size();
+
+    }
+
+    public Student[] getArrayOfStudents() {
+
+        Student[] students = new Student[personList.size()];
+
+        for (int i = 0; i < students.length; i++) {
+            students[i] = (Student) personList.get(i);
+
+        }
+        return students;
+
+    }
+
+    public void removeAll(){
+        personList.clear();
     }
 }
+
+
+
+
+
+
 
