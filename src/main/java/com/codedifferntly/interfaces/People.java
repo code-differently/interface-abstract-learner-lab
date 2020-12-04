@@ -4,15 +4,23 @@ import java.util.ArrayList;
 
 class People {
 
-    ArrayList<Person> personList = new ArrayList<>();
+    protected ArrayList<Person> personList = new ArrayList<>();
 
     public void add(Person person) {
         this.personList.add(person);
     }
 
-    public Person findById(Long id) {
+    public Person findById(long id) {
 
-        return null;
+        Person personOfInterest = null;
+
+        for (Person p : personList) {
+            if (id == p.getId()) {
+                personOfInterest = p;
+            }
+        }
+
+        return personOfInterest;
     }
 }
 

@@ -9,7 +9,7 @@ public class TestPerson {
     public void testConstructor() {
 
         // Given
-        Person person = new Person("Ray", 123);
+        Person person = new Person(123, "Ray");
         long expected = 123;
 
         // When
@@ -23,7 +23,7 @@ public class TestPerson {
     public void testSetName() {
 
         // Given
-        Person person = new Person("Ray", 123);
+        Person person = new Person(123, "Ray");
         person.setName("Bill Billiamson");
         String expected = "Bill Billiamson";
 

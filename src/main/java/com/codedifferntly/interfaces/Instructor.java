@@ -3,7 +3,7 @@ package com.codedifferntly.interfaces;
 public class Instructor extends Person implements Teacher {
 
     public Instructor(long id) {
-        super("Ray", id);
+        super(id, "Ray");
     }
 
     @Override

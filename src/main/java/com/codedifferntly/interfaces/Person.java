@@ -5,7 +5,7 @@ public class Person implements Learner {
     private final long id;
     private String name;
 
-    public Person(String name, long id) {
+    public Person(long id, String name) {
         this.id = id;
     }
 
