@@ -7,7 +7,10 @@ public class Instructor extends Person implements Teacher{
     public Instructor(Long id){
         super(id);
     }
-
+    public Instructor(Long id, String name){
+        super(id);
+        this.name=name;
+    }
 
     @Override
     public void teach(Learner learner, double numberOfHours){
