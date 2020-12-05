@@ -11,6 +11,8 @@ import com.codedifferntly.interfaces.singletons.Students;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 public class TestPeople {
 
     @Test
@@ -33,8 +35,8 @@ public class TestPeople {
         Students.getInstance().add(student);
 
         // When
-        // Get size instead of hardcoding number, because other tests are adding/removing items which changes results
-        // of this test depending on if we test this method alone, or test all methods in the class at the same time.
+        // Expected gets size instead of hardcoding number due to race conditions.
+        // Other tests add/remove items, which affects results of this test depending on if it is ran alone or along with them.
         int expected = Students.getInstance().getCount() - 1;
         Students.getInstance().remove(student.getId());
         int actual =  Students.getInstance().getCount();
@@ -75,12 +77,37 @@ public class TestPeople {
     }
 
     @Test
-    public void testGetArray() {
+    public void testGetPersonList() {
+        // Given
+        Student student = new Student(55464797, "Sam Casey");
+        Students.getInstance().add(student);
+
+        // When
+        ArrayList<Student> studentList = Students.getInstance().getPersonList();
+
+        // Then
+        Assert.assertTrue(studentList.size() > 0);
+    }
+
+    @Test
+    public void testGetArrayOfStudents() {
         // Given
         Students.getInstance().add(new Student(300009, "Isaya"));
 
         // When
         Student[] actual = Students.getInstance().getArray();
+
+        // Then
+        Assert.assertTrue(actual.length > 0);
+    }
+
+    @Test
+    public void testGetArrayOfInstructors() {
+        // Given
+        Instructors.getInstance().add(new Instructor(78965412, "Peesha Core"));
+
+        // When
+        Instructor[] actual = Instructors.getInstance().getArray();
 
         // Then
         Assert.assertTrue(actual.length > 0);

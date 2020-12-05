@@ -12,6 +12,7 @@ package com.codedifferntly.interfaces;
 //        The class should define a named removeAll which clears our personList field.
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public abstract class People<E extends Person> {
 
@@ -47,19 +48,12 @@ public abstract class People<E extends Person> {
         return personList.size();
     }
 
+    // This wasn't in notes, but child classes need to be able to get personList for their getArray() implementation.
     public ArrayList<E> getPersonList() {
         return personList;
     }
 
     public abstract E[] getArray();
-//  {
-//        Person[] person = new Person[personList.size()];
-//        for (int i = 0; i < person.length; i++) {
-//            person[i] = personList.get(i);
-//        }
-//
-//        return person;
-//    }
 
     public void removeAll() {
         personList.clear();
