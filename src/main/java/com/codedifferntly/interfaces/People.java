@@ -44,6 +44,10 @@ class People {
         return personList.size();
     }
 
+    public ArrayList<Person> getArray() {
+        return personList;
+    }
+
 }
 
 

@@ -3,6 +3,8 @@ package com.codedifferntly.interfaces;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 public class TestPeople {
 
     Person person;
@@ -11,7 +13,7 @@ public class TestPeople {
 
     @Test
     public void testAdd() {
-        person = new Person(123, "Ray");
+        person = new Person(1234576543, "Ray");
         people = new People();
         people.add(person);
         Person actual = people.personList.get(0);
@@ -77,7 +79,17 @@ public class TestPeople {
         people.add(person);
         int actual = people.getCount();
         Assert.assertEquals(expected, actual);
+    }
 
+    @Test
+    public void testGetArray() {
+        person = new Person(1234576543, "Ray");
+        people = new People();
+        ArrayList<Person> expected = people.personList;
+        people.add(person);
+        ArrayList<Person> actual = people.getArray();
+        System.out.println(actual);
+        Assert.assertEquals(expected, actual);
     }
 }
 
