@@ -36,12 +36,12 @@ public final class Students extends People<Student> {
     // return getPersonList().toArray() didn't work. So need to loop through values and create an array instead.
     @Override
     public Student[] getArray() {
-        ArrayList<Student> personList = getPersonList();
-        Student[] person = new Student[getPersonList().size()];
-        for (int i = 0; i < person.length; i++) {
-            person[i] = personList.get(i);
+        ArrayList<Student> studentList = getPersonList();
+        Student[] students = new Student[getPersonList().size()];
+        for (int i = 0; i < students.length; i++) {
+            students[i] = studentList.get(i);
         }
-        return person;
+        return students;
     }
 
     public static Students getInstance() {
