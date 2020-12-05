@@ -4,9 +4,9 @@ import com.codedifferntly.interfaces.Student;
 import com.codedifferntly.interfaces.interfaces.Learner;
 import com.codedifferntly.interfaces.interfaces.Teacher;
 
-public final class CodeDifferently {
+public class CodeDifferently {
 
-    private  static  CodeDifferently INSTANCE = new CodeDifferently();
+    private  static  CodeDifferently instance = null;
     private Students students = Students.getInstance();
     private Instructors instructors = Instructors.getInstance();
 
@@ -14,7 +14,10 @@ public final class CodeDifferently {
 
     }
     public static CodeDifferently getInstance() {
-        return INSTANCE;
+        //Lazy Instanciation
+        if (instance == null)
+            instance = new CodeDifferently();
+        return instance;
     }
 
     public void hostLecture(Teacher teacher, double numberOfHours) {
