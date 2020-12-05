@@ -36,34 +36,40 @@ public class TestPeople {
         person2 = new Person(1234576544, "Matt");
         people = new People();
         int numberOfPeopleBefore = people.personList.size();
-        System.out.println(numberOfPeopleBefore);
         people.add(person);
         people.add(person2);
         int numberOfPeopleAfter = people.personList.size();
-        System.out.println(numberOfPeopleAfter);
         people.remove(person);
         int numberOfPeopleFinal = people.personList.size();
-        System.out.println(numberOfPeopleFinal);
         Assert.assertNotEquals(numberOfPeopleAfter, numberOfPeopleFinal);
-        //
     }
+
     @Test
     public void testRemovePersonById() {
         person = new Person(1234576543, "Ray");
         person2 = new Person(1234576544, "Matt");
         people = new People();
         int numberOfPeopleBefore = people.personList.size();
-        System.out.println(numberOfPeopleBefore);
         people.add(person);
         people.add(person2);
         int numberOfPeopleAfter = people.personList.size();
-        System.out.println(numberOfPeopleAfter);
         people.remove(1234576543);
         int numberOfPeopleFinal = people.personList.size();
-        System.out.println(numberOfPeopleFinal);
         Assert.assertNotEquals(numberOfPeopleAfter, numberOfPeopleFinal);
     }
 
+    @Test
+    public void testRemoveAll() {
+        person = new Person(1234576543, "Ray");
+        people = new People();
+        people.add(person);
+        int numberOfPeopleBefore = people.personList.size();
+        System.out.println(numberOfPeopleBefore);
+        people.removeAll();
+        int numberOfPeopleFinal = people.personList.size();
+        System.out.println(numberOfPeopleFinal);
+        Assert.assertTrue(numberOfPeopleFinal < numberOfPeopleBefore);
+    }
 }
 
 

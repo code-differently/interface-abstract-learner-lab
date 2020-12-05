@@ -34,8 +34,10 @@ class People {
         return personOfInterest;
     }
 
+    public void removeAll() {
+        personList.clear();
+    }
 
-    
 }
 
 
