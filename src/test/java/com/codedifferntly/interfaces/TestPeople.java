@@ -6,71 +6,101 @@ package com.codedifferntly.interfaces;
 //        Create a testRemove method which ensures that the personList in a People object is depopulated with a respective Person object following the invokation of the remove method.
 //        Create a testFindById method which ensures that a respective Person object with a respective id field is returned upon invokation of the findById method on a respective People object.
 
+import com.codedifferntly.interfaces.singletons.Instructors;
+import com.codedifferntly.interfaces.singletons.Students;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class TestPeople {
 
+//    @Test
+//    public void testAdd() {
+//        // Given
+//        People people = new People();
+//        Person person = new Person(4536l, "Timothy");
+//
+//        // When
+//        people.add(person);
+//        int expected = 1;
+//        int actual = people.getCount();
+//
+//        // Then
+//        Assert.assertEquals(expected, actual);
+//    }
+
     @Test
     public void testAdd() {
         // Given
-        People people = new People();
-        Person person = new Person(4536l, "Timothy");
 
         // When
-        people.add(person);
-        int expected = 1;
-        int actual = people.getCount();
+        Instructors.getInstance().add(new Instructor(369, "Tariq"));
+        int expected = 9;
+        int actual = Instructors.getInstance().getCount();
 
         // Then
         Assert.assertEquals(expected, actual);
     }
+
+//    @Test
+//    public void testRemove() {
+//        // Given
+//        People people = new People();
+//        Person person = new Person(4536l, "Timothy");
+//        people.add(person);
+//
+//        // When
+//        people.remove(person.getId());
+//        int expected = 0;
+//        int actual =  people.getCount();
+//
+//        // Then
+//        Assert.assertEquals(expected, actual);
+//    }
 
     @Test
     public void testRemove() {
         // Given
-        People people = new People();
-        Person person = new Person(4536l, "Timothy");
-        people.add(person);
+        Student student = new Student(4536l, "Timothy");
+        Students.getInstance().add(student);
 
         // When
-        people.remove(person.getId());
-        int expected = 0;
-        int actual =  people.getCount();
+        Students.getInstance().remove(student.getId());
+        int expected = 9;
+        int actual =  Students.getInstance().getCount();
 
         // Then
         Assert.assertEquals(expected, actual);
     }
-
-    @Test
-    public void testRemoveAll() {
-        // Given
-        People people = new People();
-        people.add(new Person(4536l, "Timothy"));
-        people.add(new Person(4536l, "Arnold"));
-
-        // When
-        people.removeAll();
-        int expected = 0;
-        int actual =  people.getCount();
-
-        // Then
-        Assert.assertEquals(expected, actual);
-    }
-
-    // Create a testFindById method which ensures that a respective Person object with a respective id field is returned upon invokation of the findById method on a respective People object.
-    @Test
-    public void testFindById() {
-        // Given
-        People people = new People();
-        Person person = new Person(789123l, "Peter");
-        people.add(person);
-
-        // When
-        Person expected = person;
-        Person actual = people.findById(person.getId());
-
-        // Then
-        Assert.assertEquals(expected, actual);
-    }
+//
+//    @Test
+//    public void testRemoveAll() {
+//        // Given
+//        People people = new People();
+//        people.add(new Person(4536l, "Timothy"));
+//        people.add(new Person(4536l, "Arnold"));
+//
+//        // When
+//        people.removeAll();
+//        int expected = 0;
+//        int actual =  people.getCount();
+//
+//        // Then
+//        Assert.assertEquals(expected, actual);
+//    }
+//
+//    // Create a testFindById method which ensures that a respective Person object with a respective id field is returned upon invokation of the findById method on a respective People object.
+//    @Test
+//    public void testFindById() {
+//        // Given
+//        People people = new People();
+//        Person person = new Person(789123l, "Peter");
+//        people.add(person);
+//
+//        // When
+//        Person expected = person;
+//        Person actual = people.findById(person.getId());
+//
+//        // Then
+//        Assert.assertEquals(expected, actual);
+//    }
 }
