@@ -88,28 +88,4 @@ public class TestPeople {
         // Then
         Assert.assertTrue(studentList.size() > 0);
     }
-
-    @Test
-    public void testGetArrayOfStudents() {
-        // Given
-        Students.getInstance().add(new Student(300009, "Isaya"));
-
-        // When
-        Student[] actual = Students.getInstance().getArray();
-
-        // Then
-        Assert.assertTrue(actual.length > 0);
-    }
-
-    @Test
-    public void testGetArrayOfInstructors() {
-        // Given
-        Instructors.getInstance().add(new Instructor(78965412, "Peesha Core"));
-
-        // When
-        Instructor[] actual = Instructors.getInstance().getArray();
-
-        // Then
-        Assert.assertTrue(actual.length > 0);
-    }
 }
