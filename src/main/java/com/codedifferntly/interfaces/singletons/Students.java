@@ -13,34 +13,24 @@ import com.codedifferntly.interfaces.Student;
 
 public final class Students extends People {
 
-    private static final Students INSTANCE = new Students();
+    private static Students instance;
 
     private Students() {
-        Student sam = new Student(443, "Sam");
-        Student gabriella = new Student(995, "Gabriella");
-        Student aakriti = new Student(968, "Aakriti");
-        Student camelCashMoney = new Student(8, "Victor$$");
-        Student michael = new Student(007, "Michael$$");
-        Student Sam = new Student(443, "Sam");
-        Student danielleD = new Student(15, "Danielle D");
-        Student abi = new Student(147, "Abi");
-        Student lachelle = new Student(050, "Lachelle");
-
-        add(sam);
-        add(gabriella);
-        add(aakriti);
-        add(camelCashMoney);
-        add(michael);
-        add(Sam);
-        add(danielleD);
-        add(abi);
-        add(lachelle);
+        add(new Student(443, "Sam"));
+        add(new Student(995, "Gabriella"));
+        add(new Student(968, "Aakriti"));
+        add(new Student(8, "Victor$$"));
+        add(new Student(007, "Michael$$"));
+        add(new Student(443, "Sam"));
+        add(new Student(15, "Danielle D"));
+        add(new Student(147, "Abi"));
+        add(new Student(050, "Lachelle"));
     }
 
-
-
     public static Students getInstance() {
-        return INSTANCE;
+        if (instance == null)
+            instance = new Students();
+        return instance;
     }
 
 }
