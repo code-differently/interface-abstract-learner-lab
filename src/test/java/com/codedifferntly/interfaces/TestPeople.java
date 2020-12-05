@@ -60,7 +60,7 @@ public class TestPeople {
     @Test
     public void testRemove() {
         // Given
-        Student student = new Student(4536l, "Timothy");
+        Student student = new Student(55840, "Timothy");
         Students.getInstance().add(student);
 
         // When
@@ -107,18 +107,33 @@ public class TestPeople {
 
 //
 //    // Create a testFindById method which ensures that a respective Person object with a respective id field is returned upon invokation of the findById method on a respective People object.
-//    @Test
-//    public void testFindById() {
-//        // Given
-//        People people = new People();
-//        Person person = new Person(789123l, "Peter");
-//        people.add(person);
-//
-//        // When
-//        Person expected = person;
-//        Person actual = people.findById(person.getId());
-//
-//        // Then
-//        Assert.assertEquals(expected, actual);
-//    }
+////    @Test
+////    public void testFindById() {
+////        // Given
+////        People people = new People();
+////        Person person = new Person(789123l, "Peter");
+////        people.add(person);
+////
+////        // When
+////        Person expected = person;
+////        Person actual = people.findById(person.getId());
+////
+////        // Then
+////        Assert.assertEquals(expected, actual);
+////    }
+
+    // Create a testFindById method which ensures that a respective Person object with a respective id field is returned upon invokation of the findById method on a respective People object.
+    @Test
+    public void testFindById() {
+        // Given
+        Student student = new Student(10756, "Jameson Bonde");
+        Students.getInstance().add(student);
+
+        // When
+        Student expected = student;
+        Student actual = Students.getInstance().findById(student.getId());
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
 }
