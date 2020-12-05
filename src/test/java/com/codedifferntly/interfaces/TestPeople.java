@@ -87,6 +87,24 @@ public class TestPeople {
 //        // Then
 //        Assert.assertEquals(expected, actual);
 //    }
+
+    @Test
+    public void testRemoveAll() {
+        // Given
+
+        Instructors.getInstance().add(new Instructor(45361, "Timothy"));
+        Instructors.getInstance().add(new Instructor(78204, "Arnold"));
+
+        // When
+        Instructors.getInstance().removeAll();
+        int expected = 0;
+        int actual =  Instructors.getInstance().getCount();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+
 //
 //    // Create a testFindById method which ensures that a respective Person object with a respective id field is returned upon invokation of the findById method on a respective People object.
 //    @Test
