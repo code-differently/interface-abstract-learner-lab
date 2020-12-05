@@ -11,29 +11,22 @@ import com.codedifferntly.interfaces.People;
 
 final public class Instructors extends People {
 
-    public static Instructors INSTANCE = new Instructors();
+    private static Instructors instance;
 
     private Instructors() {
-        Instructor gabriella = new Instructor(995, "Gabriella");
-        Instructor tariq = new Instructor(999, "Tariq");
-        Instructor iyasu = new Instructor(456, "Iyasu");
-        Instructor stephen = new Instructor(987, "Stephen");
-        Instructor franKie = new Instructor(225, "FranKie");
-        Instructor rahmir = new Instructor(161, "Rahmir");
-        Instructor oN = new Instructor(01, "Faith");
-        Instructor eugene = new Instructor(556, "uegine");
-
-        add(gabriella);
-        add(tariq);
-        add(iyasu);
-        add(stephen);
-        add(franKie);
-        add(rahmir);
-        add(oN);
-        add(eugene);
+        add(new Instructor(995, "Gabriella"));
+        add(new Instructor(999, "Tariq"));
+        add(new Instructor(456, "Iyasu"));
+        add(new Instructor(987, "Stephen"));
+        add(new Instructor(225, "FranKie"));
+        add(new Instructor(161, "Rahmir"));
+        add(new Instructor(01, "Faith"));
+        add(new Instructor(556, "uegine"));
     }
 
     public static Instructors getInstance() {
-        return INSTANCE;
+        if (instance == null)
+            instance = new Instructors();
+        return instance;
     }
 }
