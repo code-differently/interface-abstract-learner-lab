@@ -13,21 +13,6 @@ import org.junit.Test;
 
 public class TestPeople {
 
-//    @Test
-//    public void testAdd() {
-//        // Given
-//        People people = new People();
-//        Person person = new Person(4536l, "Timothy");
-//
-//        // When
-//        people.add(person);
-//        int expected = 1;
-//        int actual = people.getCount();
-//
-//        // Then
-//        Assert.assertEquals(expected, actual);
-//    }
-
     @Test
     public void testAdd() {
         // Given
@@ -41,22 +26,6 @@ public class TestPeople {
         Assert.assertEquals(expected, actual);
     }
 
-//    @Test
-//    public void testRemove() {
-//        // Given
-//        People people = new People();
-//        Person person = new Person(4536l, "Timothy");
-//        people.add(person);
-//
-//        // When
-//        people.remove(person.getId());
-//        int expected = 0;
-//        int actual =  people.getCount();
-//
-//        // Then
-//        Assert.assertEquals(expected, actual);
-//    }
-
     @Test
     public void testRemove() {
         // Given
@@ -64,29 +33,15 @@ public class TestPeople {
         Students.getInstance().add(student);
 
         // When
+        // Get size instead of hardcoding number, because other tests are adding/removing items which changes results
+        // of this test depending on if we test this method alone, or test all methods in the class at the same time.
+        int expected = Students.getInstance().getCount() - 1;
         Students.getInstance().remove(student.getId());
-        int expected = 9;
         int actual =  Students.getInstance().getCount();
 
         // Then
         Assert.assertEquals(expected, actual);
     }
-//
-//    @Test
-//    public void testRemoveAll() {
-//        // Given
-//        People people = new People();
-//        people.add(new Person(4536l, "Timothy"));
-//        people.add(new Person(4536l, "Arnold"));
-//
-//        // When
-//        people.removeAll();
-//        int expected = 0;
-//        int actual =  people.getCount();
-//
-//        // Then
-//        Assert.assertEquals(expected, actual);
-//    }
 
     @Test
     public void testRemoveAll() {
@@ -104,29 +59,11 @@ public class TestPeople {
         Assert.assertEquals(expected, actual);
     }
 
-
-//
-//    // Create a testFindById method which ensures that a respective Person object with a respective id field is returned upon invokation of the findById method on a respective People object.
-////    @Test
-////    public void testFindById() {
-////        // Given
-////        People people = new People();
-////        Person person = new Person(789123l, "Peter");
-////        people.add(person);
-////
-////        // When
-////        Person expected = person;
-////        Person actual = people.findById(person.getId());
-////
-////        // Then
-////        Assert.assertEquals(expected, actual);
-////    }
-
-    // Create a testFindById method which ensures that a respective Person object with a respective id field is returned upon invokation of the findById method on a respective People object.
+    //  Create a testFindById method which ensures that a respective Person object with a respective id field is returned upon invokation of the findById method on a respective People object.
     @Test
     public void testFindById() {
         // Given
-        Student student = new Student(10756, "Jameson Bonde");
+        Student student = new Student(0075, "Jameson Bonde");
         Students.getInstance().add(student);
 
         // When
