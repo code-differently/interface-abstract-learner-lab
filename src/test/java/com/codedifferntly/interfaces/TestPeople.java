@@ -35,7 +35,6 @@ public class TestPeople {
         person = new Person(1234576543, "Ray");
         person2 = new Person(1234576544, "Matt");
         people = new People();
-        int numberOfPeopleBefore = people.personList.size();
         people.add(person);
         people.add(person2);
         int numberOfPeopleAfter = people.personList.size();
@@ -49,7 +48,6 @@ public class TestPeople {
         person = new Person(1234576543, "Ray");
         person2 = new Person(1234576544, "Matt");
         people = new People();
-        int numberOfPeopleBefore = people.personList.size();
         people.add(person);
         people.add(person2);
         int numberOfPeopleAfter = people.personList.size();
@@ -69,6 +67,17 @@ public class TestPeople {
         int numberOfPeopleFinal = people.personList.size();
         System.out.println(numberOfPeopleFinal);
         Assert.assertTrue(numberOfPeopleFinal < numberOfPeopleBefore);
+    }
+
+    @Test
+    public void testGetCount() {
+        person = new Person(1234576543, "Ray");
+        people = new People();
+        int expected = 1;
+        people.add(person);
+        int actual = people.getCount();
+        Assert.assertEquals(expected, actual);
+
     }
 }
 

@@ -9,16 +9,18 @@ class People {
     public void add(Person person) {
         this.personList.add(person);
     }
-    
+
     public void remove(Person person) {
-        Person personToRemove = person;
-        
-        personList.removeIf(p -> personToRemove == p);
+
+        // I wrote a foreach, intellij offered this
+        // I'm digging in to understand it better.
+        personList.removeIf(p -> person == p);
     }
-    
+
     public void remove(long id) {
-        long idToRemove = id;
         Person personToRemove = findById(id);
+        // I wrote a foreach, intellij offered this
+        // I'm digging in to understand it better.
         personList.removeIf(p -> personToRemove == p);
     }
 
@@ -36,6 +38,10 @@ class People {
 
     public void removeAll() {
         personList.clear();
+    }
+
+    public Integer getCount() {
+        return personList.size();
     }
 
 }
