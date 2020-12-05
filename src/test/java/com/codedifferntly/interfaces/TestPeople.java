@@ -64,10 +64,8 @@ public class TestPeople {
         people = new People();
         people.add(person);
         int numberOfPeopleBefore = people.personList.size();
-        System.out.println(numberOfPeopleBefore);
         people.removeAll();
         int numberOfPeopleFinal = people.personList.size();
-        System.out.println(numberOfPeopleFinal);
         Assert.assertTrue(numberOfPeopleFinal < numberOfPeopleBefore);
     }
 
@@ -88,7 +86,6 @@ public class TestPeople {
         ArrayList<Person> expected = people.personList;
         people.add(person);
         ArrayList<Person> actual = people.getArray();
-        System.out.println(actual);
         Assert.assertEquals(expected, actual);
     }
 }
