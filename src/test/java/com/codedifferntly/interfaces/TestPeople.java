@@ -27,7 +27,7 @@ public class TestPeople {
     }
 
     @Test
-    public void TestRemove() {
+    public void testRemove() {
         // Given
         People people = new People();
         Person person = new Person(4536l, "Timothy");
@@ -35,6 +35,22 @@ public class TestPeople {
 
         // When
         people.remove(person.getId());
+        int expected = 0;
+        int actual =  people.getCount();
+
+        // Then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testRemoveAll() {
+        // Given
+        People people = new People();
+        people.add(new Person(4536l, "Timothy"));
+        people.add(new Person(4536l, "Arnold"));
+
+        // When
+        people.removeAll();
         int expected = 0;
         int actual =  people.getCount();
 
