@@ -73,4 +73,16 @@ public class TestPeople {
         // Then
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testGetArray() {
+        // Given
+        Students.getInstance().add(new Student(300009, "Isaya"));
+
+        // When
+        Student[] actual = Students.getInstance().getArray();
+
+        // Then
+        Assert.assertTrue(actual.length > 0);
+    }
 }

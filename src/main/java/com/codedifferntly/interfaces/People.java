@@ -47,6 +47,10 @@ public abstract class People<E extends Person> {
         return personList.size();
     }
 
+    public ArrayList<E> getPersonList() {
+        return personList;
+    }
+
     public abstract E[] getArray();
 //  {
 //        Person[] person = new Person[personList.size()];
