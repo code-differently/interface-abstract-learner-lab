@@ -9,7 +9,7 @@ public class TestStudent {
     public void testImplementation() {
 
         // Given
-        Student student = new Student(123);
+        Student student = new Student(123, "Ray");
 
         // When
         // Then
@@ -20,7 +20,7 @@ public class TestStudent {
     public void testInheritance() {
 
         // Given
-        Student student = new Student(123);
+        Student student = new Student(123, "Ray");
 
         // When
         // Then
@@ -31,7 +31,7 @@ public class TestStudent {
     public void testLearn() {
 
         // Given
-        Student student = new Student(123);
+        Student student = new Student(123, "Ray");
         double expected = 1.0 ;
 
         // When

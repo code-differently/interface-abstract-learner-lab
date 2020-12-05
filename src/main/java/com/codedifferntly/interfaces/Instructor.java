@@ -2,8 +2,8 @@ package com.codedifferntly.interfaces;
 
 public class Instructor extends Person implements Teacher {
 
-    public Instructor(long id) {
-        super(id, "Ray");
+    public Instructor(long id, String name) {
+        super(id, name);
     }
 
     @Override
