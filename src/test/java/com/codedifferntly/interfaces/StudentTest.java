@@ -39,7 +39,7 @@ public class StudentTest {
         Student student = new Student(4256, "Victor");
         student.Learn(10);
         //When
-        double expected = 15;
+        double expected = 10;
         double actual = student.getTotalStudyTime();
 
         //Then

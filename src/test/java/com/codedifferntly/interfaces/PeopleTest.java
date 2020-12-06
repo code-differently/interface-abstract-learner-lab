@@ -11,10 +11,15 @@ public class PeopleTest {
     public void testAdd(){
 
         //Given
-       // abstract People = new People();
+        // Eventhough, it is a poor design in this case the only we can instantiate the
+        // abstract class and make the test pass is ny instantiating anonymous inner subclass. This worked.
+        People people = new People() {
+            @Override
+            public Person[] getArray() {
+                return new Person[0];
+            }
+        };
         Person person = new Person(456l, "");
-
-        People.personList.add(person);
 
         //When
         people.add(person);
@@ -29,7 +34,12 @@ public class PeopleTest {
     public void testRemove(){
 
         //Given
-        People people = new People();
+        People people = new People() {
+            @Override
+            public Person[] getArray() {
+                return new Person[0];
+            }
+        };
         Person person = new Person(456l, "");
         people.add(person);
 
@@ -43,27 +53,17 @@ public class PeopleTest {
     Assert.assertEquals(expected, actual);
     }
 
-//    @Test
-//    public void testRemoveAll(){
-//
-//        //Given
-//        People people = new People();
-//        people.add(new Person(4112,"sam"));
-//        people.add(new Person(4533,"sandu"));
-//        //When
-//        people.removeAll();
-//        int expected = 0;
-//        int actual = people.getCount();
-//
-//        //Then
-//        Assert.assertEquals(expected,actual);
-//    }
     @Test
     public void testFindById(){
 
         //Given
 
-        People people = new People();
+         People people = new People() {
+            @Override
+            public Person[] getArray() {
+                return new Person[0];
+            }
+        };
         Person person = new Person(456l, "");
         people.add(person);
 
