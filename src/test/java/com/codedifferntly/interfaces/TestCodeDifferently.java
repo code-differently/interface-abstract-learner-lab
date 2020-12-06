@@ -29,12 +29,12 @@ public class TestCodeDifferently {
    @Test
     public void testHostLectureID() {
         CodeDifferently.hostLecture(543L, 2.0);
-       Student[] studentsArray = Students.getInstance().getArray();
+        Student[] studentsArray = Students.getInstance().getArray();
 
-       double expected = 2.0;
-       double actual = studentsArray[0].getTotalStudyTime();
+        double expected = 2.0;
+        double actual = studentsArray[0].getTotalStudyTime();
 
-       Assert.assertEquals(expected, actual, 0.0);
+        Assert.assertEquals(expected, actual, 0.0);
 
    }
 

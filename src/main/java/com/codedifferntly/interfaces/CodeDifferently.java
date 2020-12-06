@@ -33,17 +33,11 @@ public class CodeDifferently {
     }
 
     public static void hostLecture(Teacher teacher, double numberOfHours){
-        //List<Object> studentsList = Arrays.asList(Students.getInstance().getArray());
-       // Student[] studentsArray = new Student[studentsList.size()];
-       // studentsList.toArray(studentsArray);
         Student[] studentsArray = Students.getInstance().getArray();
         teacher.lecture(studentsArray,numberOfHours);
     }
 
     public static void hostLecture(Long id, double numberOfHours){
-       // List<Object> studentsList = Arrays.asList(Students.getInstance().getArray());
-       // Student[] studentsArray = new Student[studentsList.size()];
-      //  studentsList.toArray(studentsArray);
         Teacher teacher =(Teacher) Instructors.getInstance().findById(id);
         Student[] studentsArray = Students.getInstance().getArray();
         teacher.lecture(studentsArray,numberOfHours);

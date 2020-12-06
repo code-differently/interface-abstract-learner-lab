@@ -16,7 +16,10 @@ public class Instructors extends People<Instructor>{
 
     }
     public Instructor[] getArray(){
-        Instructor[] instructorsArray = Instructors.getInstance().getArray();
-        return instructorsArray;
+        Instructor[] instructors = new Instructor[personList.size()];
+        for(int i=0; i < personList.size(); i++){
+            instructors[i]  = personList.get(i);
+        }
+        return instructors;
     }
 }
