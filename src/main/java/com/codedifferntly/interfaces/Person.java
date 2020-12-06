@@ -1,10 +1,10 @@
 package com.codedifferntly.interfaces;
 
 public class Person {
-    private final long id;
+    private long id;
     private String name;
 
-    public  Person(long id, String name){
+    public Person(long id, String name) {
         this.id = id;
         this.name = name;
     }

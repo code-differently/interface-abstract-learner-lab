@@ -9,7 +9,7 @@ public class TestPerson {
     public void constructorIdTest() {
 
         //Given
-        Person person = new Person(4251l, "Mike");
+        Person person = new Person(451l, "Mike");
 
         //When
         long expected = 451l;
@@ -34,7 +34,7 @@ public class TestPerson {
     }
 
     @Test
-    private void setNameTest(){
+    public void setNameTest(){
         //Given
         Person person = new Person(452l, "Sam");
         person.setName("Sam");
