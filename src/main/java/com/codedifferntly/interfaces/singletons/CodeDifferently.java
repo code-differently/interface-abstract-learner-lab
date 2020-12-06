@@ -22,12 +22,12 @@ public class CodeDifferently {
 
     public void hostLecture(Teacher teacher, double numberOfHours){
         Student[] studentArray = students.getArray();
-        teacher.lecture((Student[])students.getArray(), numberOfHours);
+        teacher.lecture(students.getArray(), numberOfHours);
     }
 
     public void hostLecture(long id, double numberOfHours){
-        Instructor instructor = (Instructor)instructors.findById(id);
-        instructor.lecture((Student[])students.getArray(), numberOfHours);
+        Instructor instructor = instructors.findById(id);
+        instructor.lecture(students.getArray(), numberOfHours);
 
 
     }

@@ -3,33 +3,33 @@ package com.codedifferntly.interfaces;
 import java.util.ArrayList;
 
 
-public class People {
+public abstract class People<E extends Person> {
 
 
-    protected ArrayList<Person> personList;
+    protected ArrayList<E> personList;
 
     public People() {
         personList = new ArrayList<>();
     }
 
-    public void add(Person person) {
+    public void add(E person) {
         personList.add(person);
     }
 
-    public Person findById(long id) {
-        for (Person p : personList) {
+    public E findById(long id) {
+        for (E p : personList) {
             if (p.getId() == id)
                 return p;
         }
         return null;
     }
 
-    public void remove(Person person) {
+    public void remove(E person) {
         personList.remove(person);
     }
 
     public void remove(long id) {
-        Person person = findById(id);
+        E person = findById(id);
         if (person != null) {
             remove(person);
         }
@@ -39,12 +39,7 @@ public class People {
         return personList.size();
     }
 
-    public Person[] getArray() {
-        Person[] person = new Person[personList.size()];
-        for (int i = 0; i < person.length; i++)
-            person[i] = personList.get(i);
-        return person;
-    }
+    public abstract E[] getArray();
 
 }
 

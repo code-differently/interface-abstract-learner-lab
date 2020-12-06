@@ -8,8 +8,8 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class Students extends People {
-//private List<Student> studs = new ArrayList<>(Student);
+public final class Students extends People<Student> {
+
    private static Students INSTANCE = null;
 
     private Students(){

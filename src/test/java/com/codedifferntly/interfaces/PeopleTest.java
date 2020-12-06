@@ -11,8 +11,10 @@ public class PeopleTest {
     public void testAdd(){
 
         //Given
-        People people = new People();
+       // abstract People = new People();
         Person person = new Person(456l, "");
+
+        People.personList.add(person);
 
         //When
         people.add(person);

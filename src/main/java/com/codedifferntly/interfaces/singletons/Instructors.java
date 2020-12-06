@@ -2,9 +2,10 @@ package com.codedifferntly.interfaces.singletons;
 
 import com.codedifferntly.interfaces.Instructor;
 import com.codedifferntly.interfaces.People;
+import com.codedifferntly.interfaces.Student;
 
 
-public class Instructors extends People {
+public class Instructors extends People<Instructor> {
    final private static Instructors INSTANCE = new Instructors();
 
     private Instructors(){
@@ -19,6 +20,14 @@ public class Instructors extends People {
 
     }
 
+    @Override
+    public Instructor[] getArray() {
+        Instructor[] instructor = new Instructor[personList.size()];
+        for (int i = 0; i < instructor.length; i++) {
+            instructor[i] =  personList.get(i);
+        }
+        return instructor;
+    }
    public static Instructors getInstance(){
         return INSTANCE;
     }
