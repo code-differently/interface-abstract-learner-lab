@@ -2,7 +2,7 @@ package com.codedifferntly.interfaces;
 
 import java.util.ArrayList;
 
-public class Students extends People{
+public class Students  extends People<Student>{
 
    private static Students instance = new Students();
 
@@ -21,5 +21,14 @@ public class Students extends People{
          return instance;
 
          }
+
+     public Student[] getArray(){
+           Student[] students = new Student[personList.size()];
+           for(int i = 0; i < personList.size(); i++){
+               students[i] = personList.get(i);
+           }
+           return students;
+     }
+
      }
 

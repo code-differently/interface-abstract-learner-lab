@@ -18,13 +18,14 @@ import java.util.List;
 
 public class CodeDifferently {
 
-    private static CodeDifferently instance = new CodeDifferently();
+    private static CodeDifferently instance = null;
     private Students students = Students.getInstance();
     private Instructors instructors = Instructors.getInstance();
 
     private CodeDifferently(){
 
     }
+    //Lazy instantiation
     public static CodeDifferently getInstance(){
         if(instance == null)
             instance = new CodeDifferently();
@@ -32,17 +33,19 @@ public class CodeDifferently {
     }
 
     public static void hostLecture(Teacher teacher, double numberOfHours){
-        List<Object> studentsList = Arrays.asList(Students.getInstance().getArray());
-        Student[] studentsArray = new Student[studentsList.size()];
-        studentsList.toArray(studentsArray);
+        //List<Object> studentsList = Arrays.asList(Students.getInstance().getArray());
+       // Student[] studentsArray = new Student[studentsList.size()];
+       // studentsList.toArray(studentsArray);
+        Student[] studentsArray = Students.getInstance().getArray();
         teacher.lecture(studentsArray,numberOfHours);
     }
 
     public static void hostLecture(Long id, double numberOfHours){
-        List<Object> studentsList = Arrays.asList(Students.getInstance().getArray());
-        Student[] studentsArray = new Student[studentsList.size()];
-        studentsList.toArray(studentsArray);
+       // List<Object> studentsList = Arrays.asList(Students.getInstance().getArray());
+       // Student[] studentsArray = new Student[studentsList.size()];
+      //  studentsList.toArray(studentsArray);
         Teacher teacher =(Teacher) Instructors.getInstance().findById(id);
+        Student[] studentsArray = Students.getInstance().getArray();
         teacher.lecture(studentsArray,numberOfHours);
 
 

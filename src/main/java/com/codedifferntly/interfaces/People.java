@@ -3,14 +3,14 @@ package com.codedifferntly.interfaces;
 import java.util.ArrayList;
 
 
-public class People {
-    ArrayList<Person> personList = new ArrayList<>();
+public abstract class People<E extends Person>{
+    ArrayList<E> personList = new ArrayList<>();
 
-    public void add(Person person) {
+    public void add(E person) {
         personList.add(person);
     }
 
-    public void remove(Person person) {
+    public void remove(E person) {
         personList.remove(person);
     }
 
@@ -18,8 +18,8 @@ public class People {
         personList.remove(id);
     }
 
-    public Person findById(Long id) {
-        for (Person person : personList) {
+    public E findById(Long id) {
+        for (E person : personList) {
             if (id.equals(person.getId()))
                 return person;
             }
@@ -31,10 +31,8 @@ public class People {
         return count;
     }
 
-    public String[] getArray(){
-        String[] personListArray = personList.toArray(new String[0]);
-        return personListArray;
-    }
+    public abstract E[] getArray();
+
     public void removeAll(){
         personList.clear();
     }

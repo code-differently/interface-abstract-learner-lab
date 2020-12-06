@@ -1,6 +1,6 @@
 package com.codedifferntly.interfaces;
 
-public class Instructors extends People{
+public class Instructors extends People<Instructor>{
 
     private static Instructors instance = new Instructors();
 
@@ -14,5 +14,9 @@ public class Instructors extends People{
             instance = new Instructors();
         return instance;
 
+    }
+    public Instructor[] getArray(){
+        Instructor[] instructorsArray = Instructors.getInstance().getArray();
+        return instructorsArray;
     }
 }

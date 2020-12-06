@@ -4,6 +4,7 @@ Create a testHostLecture method which ensures that each of the Student's
  totalStudyTime instance variable is incremented by the specified numberOfHours
   upon invoking the hostLecture method.
  */
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -14,13 +15,12 @@ public class TestCodeDifferently {
 
     @Test
     public void testHostLecture(){
-        CodeDifferently.hostLecture((Teacher) Instructors.getInstance().findById(560L),2.0);
-        List<Object> studentsList = Arrays.asList(Students.getInstance().getArray());
-        Student[] studentsArray = new Student[studentsList.size()];
-        studentsList.toArray(studentsArray);
+        CodeDifferently.hostLecture((Teacher) Instructors.getInstance().findById(543L),2.0);
+        Student[] studentsArray = Students.getInstance().getArray();
+
 
         double expected = 2.0;
-        double actual = studentsArray[0].getTotalStudyTime();
+        double actual = studentsArray[1].getTotalStudyTime();
 
         Assert.assertEquals(expected, actual, 0.0);
 
@@ -28,16 +28,21 @@ public class TestCodeDifferently {
     }
    @Test
     public void testHostLectureID() {
-        CodeDifferently.hostLecture(560L, 2.0);
-        List<Object> studentsList = Arrays.asList(Students.getInstance().getArray());
-        Student[] studentsArray = new Student[studentsList.size()];
-        studentsList.toArray(studentsArray);
+        CodeDifferently.hostLecture(543L, 2.0);
+       Student[] studentsArray = Students.getInstance().getArray();
 
        double expected = 2.0;
        double actual = studentsArray[0].getTotalStudyTime();
 
        Assert.assertEquals(expected, actual, 0.0);
 
+   }
+
+   @After
+    public void resetSingletonState(){
+        Students.getInstance().personList.forEach(student ->  {
+            student.totalStudyTime = 0;
+        });
    }
 
 

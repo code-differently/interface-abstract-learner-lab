@@ -1,6 +1,7 @@
 package com.codedifferntly.interfaces;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -9,7 +10,6 @@ public class TestPeople {
     @Test
     public void testAdd(){
         //Given
-        People people = new People();
         Person person1= new Person(199L);
         ArrayList<Person> personList = new ArrayList<>();
         personList.add(person1);
@@ -22,7 +22,6 @@ public class TestPeople {
     @Test
     public void testRemove(){
         //Given
-        People people = new People();
         Person person1= new Person(199L);
         Person person2 = new Person( 198L);
         ArrayList<Person> personList = new ArrayList<>();
@@ -35,34 +34,33 @@ public class TestPeople {
 
         Assert.assertEquals(expected, actual);
     }
+    /*
     @Test
-    public void testFindById(){
+    public <E> void testFindById(){
         //Given
-        People people = new People();
-        Person person1= new Person(199L);
-        ArrayList<Person> personList = new ArrayList<>();
-        people.add(person1);
-        long id = person1.getId();
+        E person= new E(199L);
+        ArrayList<E> personList = new ArrayList<>();
+        long id = person.getId();
 
-        person1.setName("Molly");
+        person.setName("Molly");
 
         //When
 
-        //Person expected = person1;
-        //Person actual = people.findById(id);
+        Person expected = person;
+        Person actual = findById(id);
 
         // the above two work but I wanted to see if the name would work
-        String expected = "Molly";
-        String actual = people.findById(id).getName();
+       // String expected = "Molly";
+      //  String actual = person.findById(id).getName();
 
         //Then
         Assert.assertEquals(expected, actual);
 
     }
+    */
     @Test
     public void testRemoveAll(){
         //Given
-        People people = new People();
         Person person1= new Person(199L);
         Person person2 = new Person( 198L);
         ArrayList<Person> personList = new ArrayList<>();
@@ -75,4 +73,6 @@ public class TestPeople {
 
         Assert.assertEquals(expected, actual);
     }
+
+
 }
