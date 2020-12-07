@@ -26,19 +26,12 @@ public final class CodeDifferently {
     }
 
     public void hostLecture(Teacher teacher, double numberOfHours) {
-
         teacher.lecture(students.getArray(), numberOfHours);
-
-//        System.out.println(students);
-//        System.out.println("students.count is " + students.getCount());
-//
-//        System.out.println(students.getArray());
-//
-//        teacher.lecture( (Learner[])students.getArray(), numberOfHours);
     }
 
     public void hostLecture(long id, double numberOfHours) {
-
+        Teacher teacher = instructors.findById(id);
+        hostLecture(teacher, numberOfHours);
     }
 
 }
