@@ -10,11 +10,12 @@ public enum Educator implements Teacher {
     GABRIELLE(100L, "Gabrielle"), TARIQ(200L, "Tariq"), EUGENE(300L, "Eugene"),
     IYASU(400L, "Iyasu"), STEPHEN(500L, "Stephen"), FRANKIE(600L, "FranKie"),
     RAHMIR(700L, "Rahmir"), FAITH(800L, "Faith");
+
     private final Instructor instructor;
     private double timeWorked;
 
     Educator(long id, String name) {
-        this.instructor = new Instructor(789L, "name");
+        this.instructor = new Instructor(id, name);
         this.timeWorked = 0;
         Instructors.getInstance().add(instructor);
     }

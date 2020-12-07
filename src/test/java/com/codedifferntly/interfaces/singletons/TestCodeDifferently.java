@@ -6,6 +6,7 @@ package com.codedifferntly.interfaces.singletons;
 import com.codedifferntly.interfaces.Instructor;
 import com.codedifferntly.interfaces.Person;
 import com.codedifferntly.interfaces.Student;
+import com.codedifferntly.interfaces.enums.Educator;
 import com.codedifferntly.interfaces.interfaces.Teacher;
 import org.junit.Assert;
 import org.junit.Test;
@@ -36,6 +37,39 @@ public class TestCodeDifferently {
 
         // When
         CodeDifferently.getInstance().hostLecture(116, 81);
+        double expected = 14;
+        Student student = Students.getInstance().findById(995);
+        double actual = student.getTotalStudyTime();
+
+        // Then
+        Assert.assertEquals(expected, actual, 0.01);
+    }
+
+    @Test
+    public void testHostLectureWithEnum() {
+        // Given
+
+        // When
+        Educator educator = Educator.FRANKIE;
+        CodeDifferently.getInstance().hostLecture(educator, 81);
+
+        double expected = 14;
+        Student student = Students.getInstance().findById(995);
+        double actual = student.getTotalStudyTime();
+
+        // Then
+        Assert.assertEquals(expected, actual, 0.01);
+    }
+
+    @Test
+    public void testHostLectureOverloadWithEnum() {
+        // Given
+        Educator educator = Educator.RAHMIR;
+
+        // When
+
+        Instructors.getInstance().findById(educator.)
+        CodeDifferently.getInstance().hostLecture(educator, 81);
         double expected = 14;
         Student student = Students.getInstance().findById(995);
         double actual = student.getTotalStudyTime();
