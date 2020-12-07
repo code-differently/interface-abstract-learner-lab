@@ -6,14 +6,11 @@ package com.codedifferntly.interfaces.singletons;
 //        The class should define a method hostLecture which makes use of a Teacher teacher, double numberOfHours parameter to host a lecture to the composite people field in the students reference.
 //        The class should define a method hostLecture which makes use of a long id, double numberOfHours parameter to identify a respective Instructor to host a lecture to the composite people field in the cohort reference.
 
-import com.codedifferntly.interfaces.Instructor;
-import com.codedifferntly.interfaces.Student;
-import com.codedifferntly.interfaces.interfaces.Learner;
 import com.codedifferntly.interfaces.interfaces.Teacher;
 
 public final class CodeDifferently {
 
-    private static CodeDifferently INSTANCE = new CodeDifferently();
+    private static CodeDifferently instance;
     private Students students = Students.getInstance();
     private Instructors instructors = Instructors.getInstance();
 
@@ -22,7 +19,9 @@ public final class CodeDifferently {
     }
 
     public static CodeDifferently getInstance() {
-        return INSTANCE;
+        if (instance == null)
+            instance = new CodeDifferently();
+        return instance;
     }
 
     public void hostLecture(Teacher teacher, double numberOfHours) {
