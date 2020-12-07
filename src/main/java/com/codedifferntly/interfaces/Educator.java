@@ -8,20 +8,24 @@ public enum Educator implements Teacher, Identifiable {
     double timeWorked;
     final Instructor instructor;
 
-    Educator( long id, String name){
+    Educator( Long id, String name){
         instructor = new Instructor(id, name);
     }
 
     @Override
     public void teach(Learner learner, double numberOfHours) {
     instructor.teach(learner, numberOfHours);
-    this.timeWorked= instructor.numberOfHours;
+    this.timeWorked += numberOfHours;
     }
 
     @Override
     public void lecture(Learner[] learners, double numberOfHours) {
     instructor.lecture(learners,numberOfHours);
-    this.timeWorked = instructor.numberOfHours;
+    this.timeWorked += numberOfHours;
+    }
+    public double getTimeWorked(){
+        return timeWorked;
+
     }
 
     @Override

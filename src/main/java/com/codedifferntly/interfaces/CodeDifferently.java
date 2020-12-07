@@ -41,8 +41,10 @@ public class CodeDifferently {
         Teacher teacher =(Teacher) Instructors.getInstance().findById(id);
         Student[] studentsArray = Students.getInstance().getArray();
         teacher.lecture(studentsArray,numberOfHours);
-
-
-
     }
+    public static void hostLecture(Educator instructor, double numberOfHours){
+        Student[] studentsArray = Students.getInstance().getArray();
+        instructor.lecture(studentsArray,numberOfHours);
+    }
+
 }

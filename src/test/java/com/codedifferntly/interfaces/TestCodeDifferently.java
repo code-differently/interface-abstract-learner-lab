@@ -38,9 +38,15 @@ public class TestCodeDifferently {
 
    }
 
-   @Test
-    public void testEnum (){
-        Educator tariq = Educator.TARIQ;
+    @Test
+    public void testHostLectureEnum() {
+        CodeDifferently.hostLecture(Educator.TARIQ,5.0);
+        Student[] studentsArray = Students.getInstance().getArray();
+
+        double expected = 5.0;
+        double actual = studentsArray[0].getTotalStudyTime();
+
+        Assert.assertEquals(expected, actual, 0.0);
 
     }
 
@@ -50,6 +56,12 @@ public class TestCodeDifferently {
             student.totalStudyTime = 0;
         });
    }
+    @After
+    public void resetTimeWorked() {
+        Instructors.getInstance().personList.forEach(instructor -> {
+            instructor.timeWorked = 0;
+        });
+    }
 
 
 
