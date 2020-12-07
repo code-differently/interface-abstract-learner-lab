@@ -24,7 +24,7 @@ public enum Educator implements Teacher {
     @Override
     public void teach(Learner learner, double numberOfHours) {
         instructor.teach(learner, numberOfHours);
-        timeWorked++;
+        timeWorked += numberOfHours;
     }
 
     @Override
