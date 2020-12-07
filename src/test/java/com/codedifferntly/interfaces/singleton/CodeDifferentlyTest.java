@@ -13,12 +13,13 @@ public class CodeDifferentlyTest {
         // Given
 
         // When
-        Teacher teacher = new Instructor(789, "Peter");
+        Teacher teacher = new Instructor(999, "Peter");
         CodeDifferently.getInstance().hostLecture(teacher, 81);
 
         double expected = 14;
-        Person student = Students.getInstance().findById(995);
-        double actual = ((Student) student).getTotalStudyTime();
+       Person student = Students.getInstance().findById(995);
+       double actual = ((Student) student).getTotalStudyTime();
+
 
         // Then
         Assert.assertEquals(expected, actual, 0.01);
