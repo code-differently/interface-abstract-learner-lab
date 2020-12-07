@@ -67,10 +67,12 @@ public class TestCodeDifferently {
         Educator educator = Educator.RAHMIR;
 
         // When
-
-        Instructors.getInstance().findById(educator.)
-        CodeDifferently.getInstance().hostLecture(educator, 81);
         double expected = 14;
+
+        // (teach)
+        long rahmirID = educator.getInstructor().getId();
+        CodeDifferently.getInstance().hostLecture(rahmirID, 81);
+        // (determine student was taught)
         Student student = Students.getInstance().findById(995);
         double actual = student.getTotalStudyTime();
 

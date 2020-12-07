@@ -1,6 +1,7 @@
 package com.codedifferntly.interfaces.enums;
 
 import com.codedifferntly.interfaces.Instructor;
+import com.codedifferntly.interfaces.Person;
 import com.codedifferntly.interfaces.interfaces.Learner;
 import com.codedifferntly.interfaces.interfaces.Teacher;
 import com.codedifferntly.interfaces.singletons.Instructors;
@@ -30,5 +31,9 @@ public enum Educator implements Teacher {
     public void lecture(Learner[] learners, double numberOfHours) {
         instructor.lecture(learners, numberOfHours);
         timeWorked += numberOfHours;
+    }
+
+    public Instructor getInstructor() {
+        return instructor;
     }
 }
