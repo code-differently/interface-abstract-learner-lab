@@ -1,4 +1,4 @@
-package com.codedifferntly.interfaces;
+package com.codedifferntly.interfaces.interfaces;
 
 public interface Learner {
 

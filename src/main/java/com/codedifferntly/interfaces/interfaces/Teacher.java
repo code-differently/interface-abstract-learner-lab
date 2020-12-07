@@ -1,4 +1,6 @@
-package com.codedifferntly.interfaces;
+package com.codedifferntly.interfaces.interfaces;
+
+import com.codedifferntly.interfaces.interfaces.Learner;
 
 public interface Teacher {
 
