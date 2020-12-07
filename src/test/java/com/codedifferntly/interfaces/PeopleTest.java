@@ -49,4 +49,20 @@ public class PeopleTest {
         // Then
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testRemoveAll() {
+        //Given
+        People people = new People();
+        people.add(new Person(001, "John"));
+        people.add(new Person(002, "Matthew"));
+
+        //When
+        people.removeAll();
+        int expected = 0;
+        int actual = people.getCount();
+
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
 }

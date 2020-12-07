@@ -14,7 +14,7 @@ public class CodeDifferently {
 
     }
     public static CodeDifferently getInstance() {
-        //Lazy Instanciation
+        //Lazy Instantiation
         if (instance == null)
             instance = new CodeDifferently();
         return instance;
