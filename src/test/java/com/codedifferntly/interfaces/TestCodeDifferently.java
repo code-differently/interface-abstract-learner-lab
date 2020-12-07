@@ -38,6 +38,12 @@ public class TestCodeDifferently {
 
    }
 
+   @Test
+    public void testEnum (){
+        Educator tariq = Educator.TARIQ;
+
+    }
+
    @After
     public void resetSingletonState(){
         Students.getInstance().personList.forEach(student ->  {

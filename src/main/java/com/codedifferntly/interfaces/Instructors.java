@@ -1,13 +1,13 @@
 package com.codedifferntly.interfaces;
 
-public class Instructors extends People<Instructor>{
+public class Instructors extends People<Educator>{
 
     private static Instructors instance = new Instructors();
 
     private Instructors(){
-        add(new Instructor(543L, "Tariq"));
-        add(new Instructor(542L, "Frankie"));
-        add(new Instructor(541L, "Faith"));
+        add(Educator.TARIQ);
+        add(Educator.FRANKIE);
+        add(Educator.FAITH);
     }
     public static Instructors getInstance(){
         if(instance == null)
@@ -15,8 +15,8 @@ public class Instructors extends People<Instructor>{
         return instance;
 
     }
-    public Instructor[] getArray(){
-        Instructor[] instructors = new Instructor[personList.size()];
+    public Educator[] getArray(){
+        Educator[] instructors = new Educator[personList.size()];
         for(int i=0; i < personList.size(); i++){
             instructors[i]  = personList.get(i);
         }

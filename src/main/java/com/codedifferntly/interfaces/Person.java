@@ -1,6 +1,6 @@
 package com.codedifferntly.interfaces;
 
-public class Person {
+public class Person implements Identifiable {
     Long id;
     String name;
 

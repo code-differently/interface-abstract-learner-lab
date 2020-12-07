@@ -3,7 +3,7 @@ package com.codedifferntly.interfaces;
 import java.util.ArrayList;
 
 
-public abstract class People<E extends Person>{
+public abstract class People<E extends Identifiable>{
     ArrayList<E> personList = new ArrayList<>();
 
     public void add(E person) {

@@ -1,6 +1,6 @@
 package com.codedifferntly.interfaces;
 
-public enum Educator implements Teacher {
+public enum Educator implements Teacher, Identifiable {
     TARIQ(543L, "Tariq"),
     FRANKIE(542L, "Frankie"),
     FAITH (541L, "Faith");
@@ -10,7 +10,6 @@ public enum Educator implements Teacher {
 
     Educator( long id, String name){
         instructor = new Instructor(id, name);
-        Instructors.getInstance().add(instructor);
     }
 
     @Override
@@ -25,7 +24,8 @@ public enum Educator implements Teacher {
     this.timeWorked = instructor.numberOfHours;
     }
 
-    public Instructor getInstructor() {
-        return instructor;
+    @Override
+    public Long getId() {
+        return instructor.getId();
     }
 }
