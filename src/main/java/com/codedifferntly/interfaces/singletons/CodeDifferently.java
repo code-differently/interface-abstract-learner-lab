@@ -26,6 +26,9 @@ public final class CodeDifferently {
     }
 
     public void hostLecture(Teacher teacher, double numberOfHours) {
+
+        teacher.lecture(students.getArray(), numberOfHours);
+
 //        System.out.println(students);
 //        System.out.println("students.count is " + students.getCount());
 //
