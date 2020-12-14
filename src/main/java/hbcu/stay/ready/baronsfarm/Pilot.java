@@ -1,4 +1,8 @@
 package hbcu.stay.ready.baronsfarm;
 
-public interface Pilot {
+public class Pilot extends Farmer implements Aircraft {
+
+    public Pilot(String nameIn) {
+        super(nameIn);
+    }
 }

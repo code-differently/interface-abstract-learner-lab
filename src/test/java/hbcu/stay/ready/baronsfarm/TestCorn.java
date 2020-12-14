@@ -10,8 +10,8 @@ public class TestCorn {
     @Test
     public void CornTest() {
         // Given
-        Crop corn = new Crop();
         ArrayList<Crop> earsOfCorn = new ArrayList<>();
+        Crop corn = new Crop(earsOfCorn);
         earsOfCorn.add(corn);
 
         // When

@@ -10,8 +10,8 @@ public class TestCrop {
     @Test
     public void CropTest() {
         // Given
-        Crop testCrop = new Crop();
         ArrayList<Crop> bundleOfCrops = new ArrayList<>();
+        Crop testCrop = new Crop(bundleOfCrops);
         bundleOfCrops.add(testCrop);
 
         // When

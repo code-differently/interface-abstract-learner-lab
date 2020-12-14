@@ -8,4 +8,8 @@ public class Crop implements Produce {
     private boolean hasBeenFertilized;
     private boolean hasBeenHarvested;
 
+    public Crop(ArrayList<Crop> cropIn) {
+        this.cropRow = cropIn;
+    }
+
 }

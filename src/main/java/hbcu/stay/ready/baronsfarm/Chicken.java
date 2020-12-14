@@ -8,7 +8,7 @@ public class Chicken extends Animal implements Produce {
         super(nameIn);
     }
 
-    public EdibleEgg yield(boolean hasBeenFertilized) {
+    public EdibleEgg yield(boolean harvested, boolean hasBeenFertilized) {
        EdibleEgg goodEgg;
 
        return null;

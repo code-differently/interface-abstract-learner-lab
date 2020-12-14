@@ -10,8 +10,8 @@ public class TestTomato {
     @Test
     public void TomatoTest() {
         // Given
-        Crop tomato = new Crop();
         ArrayList<Crop> juicyTomatoes = new ArrayList<>();
+        Crop tomato = new Crop(juicyTomatoes);
         juicyTomatoes.add(tomato);
 
         // When

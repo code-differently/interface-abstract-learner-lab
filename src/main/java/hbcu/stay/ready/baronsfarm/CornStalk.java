@@ -1,9 +1,17 @@
 package hbcu.stay.ready.baronsfarm;
 
+import java.util.ArrayList;
+
 public class CornStalk extends Crop {
 
-    public Corn yield(boolean hasBeenHarvested, boolean hasBeenFertilized) {
-        Corn earOfCorn;
+    private ArrayList<Crop> cornStalk;
+
+    public CornStalk(ArrayList<Crop> cornIn) {
+        super(cornIn);
+    }
+
+    public Edible yield(boolean hasBeenHarvested, boolean hasBeenFertilized) {
+        Corn corn;
 
         return null;
     }

@@ -33,4 +33,34 @@ public class TestPerson {
         // Then
         Assert.assertEquals(expectedName, actualName);
     }
+
+    @Test
+    public void testNoiseMaker() {
+        // Given
+        String name = "Baron";
+        Person person1 = new Person(name);
+
+        // When
+        String expectedNoise = "Make noise";
+        String actualNoise = person1.makeNoise();
+
+        // Then
+        Assert.assertEquals(expectedNoise, actualNoise);
+
+    }
+
+    @Test
+    public void testEater() {
+        // Given
+        String name = "Baron";
+        Person person1 = new Person(name);
+
+        // When
+        String expectedNoise = "Chomp Chomp";
+        String actualNoise = person1.eat();
+
+        // Then
+        Assert.assertEquals(expectedNoise, actualNoise);
+
+    }
 }
