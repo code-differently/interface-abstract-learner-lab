@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Crop implements Produce {
 
-    private ArrayList<Crop> cropRow;
+    private final ArrayList<Crop> cropRow;
     private boolean hasBeenFertilized;
     private boolean hasBeenHarvested;
 
@@ -12,4 +12,7 @@ public class Crop implements Produce {
         this.cropRow = cropIn;
     }
 
+    public ArrayList<Crop> getCropRow() {
+        return cropRow;
+    }
 }
