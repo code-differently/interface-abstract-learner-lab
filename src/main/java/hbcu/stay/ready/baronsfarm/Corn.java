@@ -6,7 +6,7 @@ public class Corn extends Crop {
 
     private ArrayList<Crop> corn;
 
-    public Corn(ArrayList<Crop> cornIn) {
+    public Corn(ArrayList<Edible> cornIn) {
         super(cornIn);
     }
 }

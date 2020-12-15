@@ -10,11 +10,11 @@ public class TestCornStalk {
     @Test
     public void CornStalkTest() {
         // Given
-        ArrayList<Crop> earsOfCorn = new ArrayList<>();
-        Crop corn = new Crop(earsOfCorn);
+        ArrayList<Edible> earsOfCorn = new ArrayList<>();
+        Edible corn = new Edible(earsOfCorn);
         boolean harvested = true;
         boolean fertilized = true;
-        corn.yield(harvested, fertilized);
+        corn.yield(earsOfCorn, harvested, fertilized);
         earsOfCorn.add(corn);
 
         // When

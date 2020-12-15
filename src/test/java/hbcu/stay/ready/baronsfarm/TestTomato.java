@@ -10,15 +10,16 @@ public class TestTomato {
     @Test
     public void TomatoTest() {
         // Given
-        ArrayList<Crop> juicyTomatoes = new ArrayList<>();
-        Crop tomato = new Crop(juicyTomatoes);
-        juicyTomatoes.add(tomato);
+        ArrayList<Edible> juicyTomatoes = new ArrayList<>();
+        boolean harvest = true;
+        boolean fertilize = true;
+        Edible tomato = new Edible(juicyTomatoes);
 
         // When
-        int expectedSize = 1;
-        int actualSize = juicyTomatoes.size();
+        String expectedString = "Successful Yield";
+        String actualString = tomato.yield(juicyTomatoes, harvest, fertilize);
 
         // Then
-        Assert.assertEquals(expectedSize, actualSize);
+        Assert.assertEquals(expectedString, actualString);
     }
 }

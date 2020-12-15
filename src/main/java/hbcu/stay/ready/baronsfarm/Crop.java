@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class Crop implements Produce {
 
-    private final ArrayList<Crop> cropRow;
+    private final ArrayList<Edible> cropRow;
     private boolean hasBeenFertilized;
     private boolean hasBeenHarvested;
 
-    public Crop(ArrayList<Crop> cropIn) {
+    public Crop(ArrayList<Edible> cropIn) {
         this.cropRow = cropIn;
     }
 
-    public ArrayList<Crop> getCropRow() {
+    public ArrayList<Edible> getCropRow() {
         return cropRow;
     }
 }

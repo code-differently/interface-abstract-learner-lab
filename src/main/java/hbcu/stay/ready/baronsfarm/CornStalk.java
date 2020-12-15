@@ -6,13 +6,13 @@ public class CornStalk extends Crop {
 
     private ArrayList<Crop> cornStalk;
 
-    public CornStalk(ArrayList<Crop> cornIn) {
+    public CornStalk(ArrayList<Edible> cornIn) {
         super(cornIn);
     }
 
-    public Edible yield(boolean hasBeenHarvested, boolean hasBeenFertilized) {
-        Corn corn;
+    public Edible yield(ArrayList<Edible> juicyTomatoes, boolean hasBeenHarvested, boolean hasBeenFertilized) {
+        Edible edible = new Edible(juicyTomatoes);
 
-        return null;
+        return edible;
     }
 }

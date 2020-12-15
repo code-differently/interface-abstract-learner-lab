@@ -10,11 +10,11 @@ public class TestTomatoPlant {
     @Test
     public void TomatoPlantTest() {
         // Given
-        ArrayList<Crop> juicyTomatoes = new ArrayList<>();
-        Crop tomato = new Crop(juicyTomatoes);
+        ArrayList<Edible> juicyTomatoes = new ArrayList<>();
+        Edible tomato = new Edible(juicyTomatoes);
         boolean harvested = true;
         boolean fertilized = true;
-        tomato.yield(harvested, fertilized);
+        tomato.yield(juicyTomatoes, harvested, fertilized);
         juicyTomatoes.add(tomato);
 
         // When

@@ -1,10 +1,18 @@
 package hbcu.stay.ready.baronsfarm;
 
+import java.util.ArrayList;
+
 public interface Produce {
 
-    default Edible yield(boolean harvested, boolean flagIn) {
-        EdibleEgg edibleObject = null;
+    default EdibleEgg yield(ArrayList<Edible> egg, boolean hasBeenFertilized) {
+        EdibleEgg egg1 = new EdibleEgg(egg);
 
-        return edibleObject;
+        return egg1;
+    }
+
+    default Edible yield(ArrayList<Edible> crop, boolean hasBeenHarvested, boolean hasBeenFertilized) {
+        Edible edible = new Edible(crop);
+
+        return edible;
     }
 }

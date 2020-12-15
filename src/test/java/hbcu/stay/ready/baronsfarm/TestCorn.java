@@ -10,15 +10,16 @@ public class TestCorn {
     @Test
     public void CornTest() {
         // Given
-        ArrayList<Crop> earsOfCorn = new ArrayList<>();
-        Crop corn = new Crop(earsOfCorn);
-        earsOfCorn.add(corn);
+        ArrayList<Edible> earsOfCorn = new ArrayList<>();
+        boolean harvest = true;
+        boolean fertilize = true;
+        Edible corn = new Edible(earsOfCorn);
 
         // When
-        int expectedSize = 1;
-        int actualSize = earsOfCorn.size();
+        String expectedString = "Successful Yield";
+        String actualString = corn.yield(earsOfCorn, harvest, fertilize);
 
         // Then
-        Assert.assertEquals(expectedSize, actualSize);
+        Assert.assertEquals(expectedString, actualString);
     }
 }

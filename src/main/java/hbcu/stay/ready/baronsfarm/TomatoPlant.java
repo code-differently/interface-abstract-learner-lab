@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class TomatoPlant extends Crop {
 
-    private ArrayList<Crop> tomatoPlant;
+    private ArrayList<Crop> tomato;
 
-    public TomatoPlant(ArrayList<Crop> tomatoIn) {
+    public TomatoPlant(ArrayList<Edible> tomatoIn) {
         super(tomatoIn);
     }
 
-    public Edible yield(boolean hasBeenHarvested, boolean hasBeenFertilized) {
-        Tomato tomato;
+    public Edible yield(ArrayList<Edible> juicyTomatoes, boolean hasBeenHarvested, boolean hasBeenFertilized) {
+        Edible edible = new Edible(juicyTomatoes);
 
-        return null;
+        return edible;
     }
 }

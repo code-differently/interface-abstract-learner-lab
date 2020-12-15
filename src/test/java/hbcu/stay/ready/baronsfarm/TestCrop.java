@@ -10,8 +10,8 @@ public class TestCrop {
     @Test
     public void CropTest() {
         // Given
-        ArrayList<Crop> bundleOfCrops = new ArrayList<>();
-        Crop testCrop = new Crop(bundleOfCrops);
+        ArrayList<Edible> bundleOfCrops = new ArrayList<>();
+        Edible testCrop = new Edible(bundleOfCrops);
         bundleOfCrops.add(testCrop);
 
         // When

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Tomato extends Crop {
 
-    private ArrayList<Crop> tomato;
+    private ArrayList<Edible> tomato;
 
-    public Tomato(ArrayList<Crop> tomatoIn) {
+    public Tomato(ArrayList<Edible> tomatoIn) {
         super(tomatoIn);
     }
 }
