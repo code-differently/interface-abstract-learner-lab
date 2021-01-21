@@ -12,15 +12,13 @@ class People {
 
     public void remove(Person person) {
 
-        // I wrote a foreach, intellij offered this
-        // I'm digging in to understand it better.
         personList.removeIf(p -> person == p);
     }
 
     public void remove(long id) {
+
         Person personToRemove = findById(id);
-        // I wrote a foreach, intellij offered this
-        // I'm digging in to understand it better.
+
         personList.removeIf(p -> personToRemove == p);
     }
 

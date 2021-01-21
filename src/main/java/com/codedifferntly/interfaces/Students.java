@@ -6,5 +6,6 @@ class Students extends People {
 
     private Students() {
         add(new Student(123, "Ray Cool"));
+
     }
 }
